@@ -1,0 +1,18 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  namespace: arq-ref-demo
+  name: ingress-demo
+spec:
+  tls:
+    - secretName: 192-168-99-100-nip-io-tls
+      hosts:
+        - '*.192.168.99.100.nip.io'
+  rules:
+    - host: ingress-demo.192.168.99.100.nip.io # esta es la URL con la que se va a acceder a la aplicacion
+      http:
+        paths:
+          - backend:
+              serviceName: arq-ref-demo-back
+              servicePort: 8443

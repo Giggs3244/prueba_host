@@ -1,0 +1,11 @@
+*.iml
+.idea
+.gradle
+build
+out
+mqjms*
+derby.log
+/**/.terraform
+/**/terraform.*
+local.properties
+**/src/main/generated/**

@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: DemoApp
+
+app.env: DemoApp

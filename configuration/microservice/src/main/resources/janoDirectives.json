@@ -1,0 +1,7 @@
+[
+  {
+    "app": "appSegura",
+    "directive": "gui.button.create",
+    "roles": "*"
+  }
+]

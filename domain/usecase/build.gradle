@@ -1,0 +1,8 @@
+dependencies {
+    
+    // los casos de uso se construyen usando el modelo definido en el modulo:
+    compile project(':domain-model')
+    
+    //esta dependencia es el modelo de la arquitectura base.
+    compile "co.com.proteccion.base:cqrs-core-api:${arquitectura_version}"
+}

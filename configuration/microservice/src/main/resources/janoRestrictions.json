@@ -1,0 +1,24 @@
+[
+  {
+    "app": "appSegura",
+    "url": "/commands",
+    "method": "POST",
+    "roles": "*",
+    "command": "*",
+    "strategy": null,
+    "order": 1,
+    "requiredValidCartera": "false",
+    "requiredNivelSeguridad": "false"
+  },
+  {
+    "app": "appSegura",
+    "url": "/*",
+    "method": "GET",
+    "roles": "*",
+    "command": "*",
+    "strategy": null,
+    "order": 2,
+    "requiredValidCartera": "false",
+    "requiredNivelSeguridad": "false"
+  }
+]
