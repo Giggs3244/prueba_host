@@ -7,6 +7,8 @@
 
 # testing
 /coverage
+/testResults
+/testResults/sonar-report.xml
 
 # production
 /build
