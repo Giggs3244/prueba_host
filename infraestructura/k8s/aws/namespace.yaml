@@ -1,4 +1,0 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: arq-ref-demo  # creacion y parametrizacion del namespace para la aplicacion

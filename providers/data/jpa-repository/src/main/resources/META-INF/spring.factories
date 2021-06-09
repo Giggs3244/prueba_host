@@ -1,1 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=co.com.proteccion.todo.persistence.config.TaskJpaRepositoryConfiguration

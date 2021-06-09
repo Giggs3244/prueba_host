@@ -1,157 +1,70 @@
-# Demo de Aplicaci&oacute;n Java con Arquitectura de Referencia de 
-  Protecci&oacute;n S.A.
+# Getting Started with Create React App
 
-Este repositorio es una plantilla para desarrollar aplicaciones estilo 
-microservicios basado en una una arquitectura inspirada en el manifiesto Reactivo. 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Vaya a la **[Wiki de la arquitectura de referencia](https://vostpmde37.proteccion.com.co:10443/ARQ_Referencia/arq_referencia_proteccion/wikis/home)** para mas Informaci&oacute;n.
+## Available Scripts
 
-Este repositorio esta representado el **BACKEND JAVA**.
+In the project directory, you can run:
 
-## Modulos de la aplicacion DEMO
+### `yarn start`
 
-Como la aplicacion esta construida siguiendo los principios de la 
-[Arquitectura Limpia](https://github.com/mattia-battiston/clean-architecture-example), 
-se han dispuesto los siguientes modulos:  
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Domain
- - **Model**: Modulo que representa las entidades de dominio.
- - **Usecase**: Modulo que representa los casos de uso del demo.
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-Entrypoints
- - **reactive-web**: Modulo donde se implementan los controladores REST que su 
-   aplicacion va a exponer diferentes al endpoint ```/commands``` de la 
-   arquitectura base.
+### `yarn test`
 
-Providers
- - **data/jpa-repository**: Modulo que representa la capa de persistencia del demo.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Helpers
- - Modulos helpers
- 
-Adapters
- - Modulos adaptadores.
- 
-Configuration
- - **microservice**: Modulo que configura toda la infraestructura, entry-points 
-   y servicios.
+### `yarn build`
 
-*NOTA*: los modulos tienen la autoconfiguracion de Spring activada. Ver mas info en 
-[Spring Auto-configuration](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-developing-auto-configuration.html).
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### QuickStart
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-  - Clonar este Repositorio
-  
-    ```
-    git clone --depth 1 https://vostpmde37.proteccion.com.co:10443/ARQ_Referencia/arq_referencia_proteccion.git
-    ```
-    
-  - Compilar y Correr la aplicacion con broker por defecto (ibm mq)
-    
-    ```
-    gradlew clean build
-    gradlew bootRun
-    ```
-    
-  - Enviar peticiones al backend
-  
-    - Peticiones GET al endpoint REST de consulta incluido en el demo
-    
-      ```
-      curl -X GET \
-        https://localhost:8443/tasks \
-        -H 'Accept: application/json' \
-        -H 'Accept-Encoding: gzip, deflate' \
-        -H 'Authorization: Bearer <INSERTE UN TOKEN DE AZURE>' \
-        -H 'Cache-Control: no-cache' \
-        -H 'ClienteDNI: CC-0000' \
-        -H 'Connection: keep-alive' \
-        -H 'Host: localhost:8443'
-      ```
-  
-    - Enviar un Comando 
-    
-      ```
-      curl -X POST \
-        https://localhost:8443/commands \
-        -H 'Accept: application/json' \
-        -H 'Accept-Encoding: gzip, deflate' \
-        -H 'Authorization: Bearer <INSERTE UN TOKEN DE AZURE>' \
-        -H 'Cache-Control: no-cache' \
-        -H 'Connection: keep-alive' \
-        -H 'Content-Length: 494' \
-        -H 'Content-Type: application/json' \
-        -H 'Host: localhost:8443' \
-        -d '{
-          "comando": {
-              "nombre": "task.save",
-              "payload": {
-                "name": "Aprender a usar la arq de referencia de proteccion",
-                "done": false
-              }
-          }
-      }
-      '
-      ```
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## Personalizar
+### `yarn eject`
 
-El demo funciona? Cool, Ahora cambiemos algunos datos para que su 
-aplicaci&oacute;n empiece a tener personalidad propia.
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-- En **gradle.properties**
- 
-  - version 
-    ```
-    version=1.0.0-SNAPSHOT 
-    ```
-    El valor de la version lo sigue administrando el equipo de desarrollo y 
-    debe incrementarse por cada release.
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-  - Nombre y Descripci&oacute;n
-  
-    ```
-    microservice_name= MyCoolApplication
-    description = "Esta app hace cosas..."
-    ```  
-    Por favor bautice su aplicacion con un nombre apropiado, y ademas proporcione 
-    una corta descripci&oacute;n.
-  
-  - Info para Sonarqube
-    ```
-    sonar_project_name=MyCoolApplication 
-    ```
-    Indique cual sera el nombre del proyecto de cara a sonar, se recomienda que 
-    sea el mismo `microservice_name`.
-    
-    ```
-    sonar_project_key=co.com.proteccion.<root_package>
-    ```
-    El key para sonar puede ser el mismo `sonar_project_name`, o tambien una 
-    indicacion del paquete raiz de su aplicacion.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Incompatibilidades
+## Learn More
 
-La arquitectura esta basada en `Spring Webflux` para crear aplicaciones web 
-reactivas. Esto supone que existen incompatibilidades con librerias 
-o componentes de terceros que esten basadas por ejemplo en `Servlets`.
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-Por el momento hemos detectado problemas con el uso de las siguientes librerias:
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-- Swagger: Al parecer el fabricante planea darle soporte a Spring-webflux en la 
-  [3.0.0](https://elstarit.nl/?p=1213).
+### Code Splitting
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-## Autenticaci&oacute;n
+### Analyzing the Bundle Size
 
-La autenticaci&oacute;n con AZURE no es responsabilidad del Backend java. 
-Ese flujo es responsabilidad del FrontEnd. 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-En el siguienre repositorio existen demos en Angular para guiar a los 
-desarrolladores Front en la implementacion de los flujos de 
-Autenticaci&oacute;n con `Azure` o `Azure B2C`.
+### Making a Progressive Web App
 
-[GIT Demos Autenticacion con Azure](https://vostpmde37.proteccion.com.co:10443/ARQ_Referencia/arq_referencia_proteccion_ui)
- 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `yarn build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
