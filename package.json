@@ -36,12 +36,6 @@
       "last 1 safari version"
     ]
   },
-  "jest": {
-    "coveragePathIgnorePatterns": [
-      "<rootDir>/src/reportWebVitals.js",
-      "<rootDir>/src/index.js"
-    ]
-  },
   "jestSonar": {
     "sonar56x": true,
     "reportPath": "testResults",
